@@ -18,15 +18,20 @@ public class UrlBuilder {
     }
 
     public String buildUrl(String originCountries, List<String> destinationCountries) {
-        StringBuilder resultUrl = new StringBuilder(defaultUrl);
-
         StringBuilder stringDestinationCountries = new StringBuilder();
         for (String country: destinationCountries) {
             stringDestinationCountries.append("|"+country);
         }
 
+        return buildUrl(originCountries, new String(stringDestinationCountries));
+
+    }
+
+    public String buildUrl(String originCountries, String destinationCountries) {
+        StringBuilder resultUrl = new StringBuilder(defaultUrl);
+
         resultUrl.append(Constants.ORIGIN_COUNTRIES_LABEL).append("=").append(originCountries);
-        resultUrl.append("&").append(Constants.DISTINATION_COUNTRIES_LABEL).append("=").append(stringDestinationCountries);
+        resultUrl.append("&").append(Constants.DISTINATION_COUNTRIES_LABEL).append("=").append(destinationCountries);
         resultUrl.append("&").append(Constants.MODE_LABEL).append("=").append(Constants.MODE);
         resultUrl.append("&").append(Constants.LANGUAGE_LABEL).append("=").append(Constants.LANGUAGE);
         resultUrl.append("&").append(Constants.UNITS_LABEL).append("=").append(Constants.UNITS);
@@ -34,4 +39,6 @@ public class UrlBuilder {
 
         return new String(resultUrl);
     }
+
+
 }

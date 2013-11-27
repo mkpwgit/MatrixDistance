@@ -1,1 +1,15 @@
-Brest,Belarus,Minsk,Belarus,Grodno,Belarus,Vitebsk,Belarus,Mogilev,Belarus,Gomel,Belarus,
+Brest,Minsk,355
+Brest,Grodno,253
+Brest,Vitebsk,643
+Brest,Mogilev,538
+Brest,Gomel,590
+Minsk,Grodno,283
+Minsk,Vitebsk,298
+Minsk,Mogilev,198
+Minsk,Gomel,298
+Grodno,Vitebsk,577
+Grodno,Mogilev,478
+Grodno,Gomel,579
+Vitebsk,Mogilev,177
+Vitebsk,Gomel,350
+Mogilev,Gomel,180
