@@ -1,0 +1,6 @@
+Brest,Belarus
+Minsk,Belarus
+Grodno,Belarus
+Vitebsk,Belarus
+Mogilev,Belarus
+Gomel,Belarus
