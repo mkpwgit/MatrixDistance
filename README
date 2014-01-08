@@ -1,2 +1,5 @@
 //to compile project and add all needed jars into main jar
 mvn clean compile assembly:single
+
+//to run jar file
+java -Dfile.encoding=UTF-8 -jar MatrixDistance.jar
