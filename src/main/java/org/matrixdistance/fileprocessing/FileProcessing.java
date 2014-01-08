@@ -1,6 +1,5 @@
 package org.matrixdistance.fileprocessing;
 
-import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.matrixdistance.domain.Element;
 import org.matrixdistance.domain.Matrix;
@@ -21,6 +20,17 @@ public class FileProcessing {
             br = new BufferedReader(new FileReader(filePath));
         else
             bw = new BufferedWriter(new FileWriter(filePath));
+    }
+
+    public List<Integer> getNumbers() throws IOException {
+        int total = Integer.parseInt(br.readLine());
+        int i = Integer.parseInt(br.readLine());
+        int j = Integer.parseInt(br.readLine());
+        List<Integer> counters = new ArrayList<Integer>();
+        counters.add(total);
+        counters.add(i);
+        counters.add(j);
+        return counters;
     }
 
     public List<String> getCountries() throws IOException {
@@ -78,6 +88,10 @@ public class FileProcessing {
         resultString.append('\n');
 
         bw.write(new String(resultString));
+    }
+
+    public void writeNumber(int number) throws IOException {
+        bw.write(String.valueOf(number)+'\n');
     }
 
     public void closeResource() throws IOException {

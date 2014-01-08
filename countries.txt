@@ -1,6 +1,16 @@
-Brest,Belarus
-Minsk,Belarus
-Grodno,Belarus
-Vitebsk,Belarus
-Mogilev,Belarus
-Gomel,Belarus
+Białystok,Polska
+Bydgoszcz,Polska
+Wrocław,Polska
+Łódź,Polska
+Gorzów Wielkopolski,Polska
+Gdańsk,Polska
+Kraków,Polska
+Lublin,Polska
+Olsztyn,Polska
+Opole,Polska
+Poznań,Polska
+Rzeszów,Polska
+Katowice,Polska
+Kielce,Polska
+Warszawa,Polska
+Szczecin,Polska
