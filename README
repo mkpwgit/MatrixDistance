@@ -1,2 +1,2 @@
-This file was created by IntelliJ IDEA 12.1.6 for binding GitHub repository
-This file was modified by IntelliJ IDEA 12.1.6 for binding GitHub repository
+//to compile project and add all needed jars into main jar
+mvn clean compile assembly:single
