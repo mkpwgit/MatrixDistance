@@ -35,28 +35,51 @@ public class GoogleMapsClient {
     public static void createCsvFile(List<String> countries, int iBeginner, int jBeginner) throws IOException {
         UrlBuilder urlBuilder = new UrlBuilder();
         FileProcessing fileProcessingOutput = new FileProcessing("result.csv", false);
-        int i = -1;
-        int j = -1;
+        int i = iBeginner;
+        int j = jBeginner;
         int tempTotalCount = totalCount;
 
         outerloop:
-        for (i = iBeginner; i < countries.size() - 1; i++) {
+        for (;i < countries.size(); i = i + 1) {
             String originCountry = countries.get(i);
-            for (j = jBeginner; j < countries.size(); j++) {
-                if (tempTotalCount-- > 0) {
-                    String destinationCountry = countries.get(j);
-                    String url = urlBuilder.buildUrl(originCountry, destinationCountry);
-                    String jsonResult = restTemplate.getForObject(url, String.class);
-                    System.out.println(jsonResult);
-                    fileProcessingOutput.writeLine(originCountry, destinationCountry, jsonResult);
-                } else {
+            for (; j < countries.size(); j = j + 1) {
+                String destinationCountry = countries.get(j);
+                String url = urlBuilder.buildUrl(originCountry, destinationCountry);
+                String jsonResult = restTemplate.getForObject(url, String.class);
+                System.out.println(jsonResult);
+                fileProcessingOutput.writeLine(originCountry, destinationCountry, jsonResult);
+                tempTotalCount--;
+                if (tempTotalCount == 0) {
                     break outerloop;
                 }
             }
+            j=0;
         }
 
+       /* int i = iBeginner;
+        int j = jBeginner;
+
+        outerloop:
+        while (i < countries.size() - 1) {
+            String originCountry = countries.get(i);
+            while (j < countries.size()) {
+                String destinationCountry = countries.get(j);
+                String url = urlBuilder.buildUrl(originCountry, destinationCountry);
+                String jsonResult = restTemplate.getForObject(url, String.class);
+                System.out.println(jsonResult);
+                fileProcessingOutput.writeLine(originCountry, destinationCountry, jsonResult);
+                tempTotalCount--;
+                if (tempTotalCount == 0) {
+                    break outerloop;
+                }
+                j++;
+            }
+            i++;
+        }*/
+
+
         fileProcessingOutput.closeResource();
-        writeFinishValues(totalCount, i, j);
+        writeFinishValues(totalCount, i, ++j);
     }
 
     public static void writeFinishValues(int totalCount, int iFinish, int jFinish) throws IOException {

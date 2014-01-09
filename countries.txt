@@ -10,7 +10,3 @@ Olsztyn,Polska
 Opole,Polska
 Poznań,Polska
 Rzeszów,Polska
-Katowice,Polska
-Kielce,Polska
-Warszawa,Polska
-Szczecin,Polska
