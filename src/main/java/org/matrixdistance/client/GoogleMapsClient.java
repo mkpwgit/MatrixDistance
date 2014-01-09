@@ -56,28 +56,6 @@ public class GoogleMapsClient {
             j=0;
         }
 
-       /* int i = iBeginner;
-        int j = jBeginner;
-
-        outerloop:
-        while (i < countries.size() - 1) {
-            String originCountry = countries.get(i);
-            while (j < countries.size()) {
-                String destinationCountry = countries.get(j);
-                String url = urlBuilder.buildUrl(originCountry, destinationCountry);
-                String jsonResult = restTemplate.getForObject(url, String.class);
-                System.out.println(jsonResult);
-                fileProcessingOutput.writeLine(originCountry, destinationCountry, jsonResult);
-                tempTotalCount--;
-                if (tempTotalCount == 0) {
-                    break outerloop;
-                }
-                j++;
-            }
-            i++;
-        }*/
-
-
         fileProcessingOutput.closeResource();
         writeFinishValues(totalCount, i, ++j);
     }
