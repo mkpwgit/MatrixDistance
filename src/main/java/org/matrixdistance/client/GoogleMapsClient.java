@@ -53,7 +53,7 @@ public class GoogleMapsClient {
                     break outerloop;
                 }
             }
-            j=0;
+            j=i+2;
         }
 
         fileProcessingOutput.closeResource();

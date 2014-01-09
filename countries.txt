@@ -5,8 +5,3 @@ Wrocław,Polska
 Gorzów Wielkopolski,Polska
 Gdańsk,Polska
 Kraków,Polska
-Lublin,Polska
-Olsztyn,Polska
-Opole,Polska
-Poznań,Polska
-Rzeszów,Polska
