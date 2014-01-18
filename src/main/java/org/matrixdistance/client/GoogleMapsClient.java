@@ -47,7 +47,7 @@ public class GoogleMapsClient {
                 String url = urlBuilder.buildUrl(originCountry, destinationCountry);
                 String jsonResult = restTemplate.getForObject(url, String.class);
                 System.out.println(jsonResult);
-                fileProcessingOutput.writeLine(originCountry, destinationCountry, jsonResult);
+                fileProcessingOutput.writeCityAndCountry(originCountry, destinationCountry, jsonResult);
                 tempTotalCount--;
                 if (tempTotalCount == 0) {
                     break outerloop;

@@ -1,5 +1,6 @@
 package org.matrixdistance.fileprocessing;
 
+import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.matrixdistance.domain.Element;
 import org.matrixdistance.domain.Matrix;
@@ -86,6 +87,22 @@ public class FileProcessing {
 
         resultString.append(kmDistance);
         resultString.append('\n');
+
+        bw.write(new String(resultString));
+    }
+
+    public void writeCityAndCountry(String originCity, String destinationCity, String jsonMatrix) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        Matrix matrix = mapper.readValue(jsonMatrix, Matrix.class);
+        List<Element> elements = matrix.getRows().get(0).getElements();
+        String kmDistance = elements.get(0).getDistance().getText().split(" ")[0];
+
+//        String originCityModified = originCity.replace(',', '-');
+//        String destinationCityModified = destinationCity.replace(',', '-');
+
+        StringBuilder resultString = new StringBuilder();
+        resultString.append(originCity).append(",").append(destinationCity).append(",")
+                .append(kmDistance).append('\n');
 
         bw.write(new String(resultString));
     }
