@@ -96,6 +96,7 @@ public class FileProcessing {
         Matrix matrix = mapper.readValue(jsonMatrix, Matrix.class);
         List<Element> elements = matrix.getRows().get(0).getElements();
         String kmDistance = elements.get(0).getDistance().getText().split(" ")[0];
+        kmDistance = kmDistance.replace(",", ".");
 
 //        String originCityModified = originCity.replace(',', '-');
 //        String destinationCityModified = destinationCity.replace(',', '-');
